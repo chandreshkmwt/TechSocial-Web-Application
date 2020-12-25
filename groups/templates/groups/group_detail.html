@@ -1,0 +1,66 @@
+{% extends 'groups/group_base.html' %}
+{% load static %}
+{% block pregroup %}
+<style type="text/css">
+    .ri{
+      float:right;
+    }
+    .le{
+      float:left;
+      width:30%;
+    }
+    .p{
+      border:1px solid grey;
+      border-radius: 25px;
+      padding:10px;
+    }
+    .i{
+      width:60%;
+    }
+
+</style>
+<div class="le">
+  <h1>{{group.name}}</h1>
+  <h2>MemberCount:{{group.members.count}}</h2>
+
+  <div class="content">
+    {% if user in group.members.all %}
+      <a href="{% url 'groups:leave' slug=group.slug %}"
+          class = 'btn btn-lg btn-fill btn-warning'><span
+          class = 'glyphicon glyphicon-remove-circle'>Leave</span></a>
+
+    {% else %}
+    <a href="{% url 'groups:join' slug=group.slug %}"
+        class = 'btn btn-lg btn-fill btn-warning'><span
+        class = 'glyphicon glyphicon-ok-circle'>Join</span></a>
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block group_content %}
+<div class="col-md-8 ri">
+	{% if group.posts.count == 0 %}
+
+	<h1>No posts in this group yet!!!</h1>
+  <img class="i" src="{% static 'images/12.png'%}">
+
+	{% else %}
+    <h2 style = 'text-align:center'><strong>Posts in this group:</strong></h2>
+		{% for post in group.posts.all %}
+      <!-- injecting html in here -->
+      <div class="p">
+        {% include "posts/_post.html" %}
+
+      </div>
+      <br>
+
+		{% endfor %}
+
+	{% endif %}
+</div>
+
+{% endblock %}

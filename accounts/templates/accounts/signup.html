@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% load static %}
+{% block content %}
+<style type="text/css">
+  .i{
+    width:50%;
+    float:left;
+  }
+</style>
+
+<div class="container i">
+  <!-- <div class="jumbotron" style = "background-color:transparent !important;"> -->
+
+      <h2>SignUp</h2>
+
+        <form method="post" id="Form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <input type="submit" class="btn btn-default" value="SignUp">
+        </form>
+
+
+  <!-- </div> -->
+
+
+</div>
+<img class="i" src="{% static 'images/7.png'%}">
+
+
+{% endblock %}

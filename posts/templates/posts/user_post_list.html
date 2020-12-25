@@ -1,0 +1,28 @@
+{% extends "posts/post_base.html" %}
+{% load static %}
+{% block prepost %}
+<style type="text/css">
+	.p{
+		border:1px solid grey;
+		border-radius: 25px;
+		padding:10px;
+		margin:4px;
+	}
+</style>
+<div class="col-md-4">
+	<img style = 'width:60%' src="{% static 'images/11.jpg'%}">
+	<h1>@{{ post_user.username }}</h1>
+	<h2>User Post History</h2>
+</div>
+{% endblock %}
+
+{% block post_content %}
+<div class="col-md-8">
+	{% for post in post_list %}
+	<div class="p">
+		{% include "posts/_post.html" %}
+	</div>
+
+	{% endfor %}
+</div>
+{% endblock %}

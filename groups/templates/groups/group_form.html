@@ -1,0 +1,25 @@
+{% extends "groups/group_base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% block group_content %}
+
+<style type="text/css">
+  .i{
+    width:50%;
+    float:left;
+  }
+  textarea {
+   resize: none;
+ }
+</style>
+<div class="i">
+  <h2>Create A New Group</h2>
+    <form method="POST" action="{% url 'groups:create' %}" id="groupForm">
+    	{% csrf_token %}
+    	{% bootstrap_form form %}
+    	<input type="submit" value="Create" class="btn btn-primary btn-large">
+    </form>
+</div>
+
+<img class="i" src="{% static 'images/2.png'%}">
+{% endblock %}
