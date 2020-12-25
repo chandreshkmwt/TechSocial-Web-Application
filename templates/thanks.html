@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<style type="text/css">
+  h1{
+    font-size: 70px;
+    text-align:center;
+  }
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .c{
+    border: 1px solid black;
+    border-radius:25px;
+    width:80%;
+  }
+</style>
+<div class="container c">
+  <h1>Thanks for visiting!</h1>
+
+</div>
+
+<img class="i" src="{% static 'images/8.png'%}">
+
+
+{% endblock %}

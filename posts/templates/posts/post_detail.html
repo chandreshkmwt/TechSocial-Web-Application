@@ -1,0 +1,27 @@
+{% extends "posts/post_base.html" %}
+
+{% block post_content %}
+
+<style type="text/css">
+  #h{
+    margin-left:auto;
+    margin-right:auto;
+    border: 1px solid black;
+    border-radius:25px;
+    width:35%;
+  }
+
+</style>
+<h1 style = 'text-align:center' id="h">Post Number: {{post.pk}}</h1>
+<div class="col-md-8">
+
+<div class="container">
+    {% include "posts/_post.html" %}
+</div>
+
+
+
+
+
+</div>
+{% endblock %}

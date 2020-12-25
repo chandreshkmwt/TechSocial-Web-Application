@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+<style type="text/css">
+  .i{
+    float:left;
+    width:50%
+  }
+  #l{
+    font-size: 100px;
+    font-family: 'Henny Penny', cursive;
+    margin-top:50px;
+  }
+  .j{
+    width:50%;
+    float:left;
+  }
+  #but{
+    margin-left:20px;
+  }
+  .counters{
+    padding-top: 40px;
+
+
+
+  }
+  .counters span{
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    display: block;
+    color: #555186;
+    text-align:center;
+  }
+  .counters p{
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #8a87b6;
+  }
+  .im{
+    display: block;
+    /* margin-left: auto; */
+    margin-right: auto;
+    width: 10%;
+  }
+
+</style>
+
+
+  <div class="container i">
+    <!-- <div class="jumbotron" style = "background-color:transparent !important;"> -->
+      <h1 id="l">Welcome to Tech Social</h1>
+      <br>
+      <br>
+      <a id="but" href="{% url 'accounts:signup' %}" class="btn btn-info" role="button">Get Started!</a>
+    <!-- </div> -->
+
+  </div>
+
+<img class="j" src="{% static 'images/5.png'%}">
+
+<div class="im">
+  <img src="{% static 'images/9.png'%}">
+</div>
+
+
+
+{% endblock %}

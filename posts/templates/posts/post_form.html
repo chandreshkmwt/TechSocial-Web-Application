@@ -1,0 +1,33 @@
+{% extends "posts/post_base.html" %}
+
+{% load bootstrap3 %}
+
+{% load static %}
+
+{% block post_content %}
+<style type="text/css">
+
+	textarea {
+   resize: none;
+	}
+
+	.i{
+		float:left;
+		width:50%;
+	}
+
+</style>
+
+<div class="i">
+	<h2>Create New Post</h2>
+	<button type="button" class="btn btn-light"> <a href="{%url 'editor'%}" target="_blank">Post Editor</a>  </button>
+	<form method="POST" action="{% url 'posts:create' %}">
+		{% csrf_token %}
+		{% bootstrap_form form %}
+		<input type="submit" value="Post" class="btn btn-primary btn-large">
+	</form>
+</div>
+
+<img class="i" src="{% static 'images/1.png'%}">
+
+{% endblock %}

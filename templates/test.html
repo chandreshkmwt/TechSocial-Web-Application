@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<style type="text/css">
+  .i{
+    float:left;
+    
+    width:50%
+  }
+  h1{
+    font-size: 80px;
+  }
+  .j{
+    width:50%;
+    float:right;
+  }
+</style>
+<div class="i">
+  <h1>Login successful!</h1>
+</div>
+
+<img class="j" src="{% static 'images/4.png'%}">
+{% endblock %}
